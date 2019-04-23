@@ -46,6 +46,23 @@ abstract class Base extends BaseDataType
             'type' => 'string',
             'required' => true,
         ],
+        ''
+    ];
+
+    /**
+     * Parameters to be used in meta tag in header
+     * @var array
+     */
+    protected $meta_params = [
+        'SoftwareName' => [
+            'type' => 'string',
+            'required' => true,
+        ],
+        'SoftwareVersion' => [
+            'type' => 'string',
+            'required' => true,
+        ],
+        ''
     ];
 
     /**
@@ -104,7 +121,7 @@ abstract class Base extends BaseDataType
      */
     public function __construct()
     {
-        $this->params = array_merge($this->header_params, $this->body_params);
+        $this->params = array_merge($this->header_params, $this->body_params, $this->meta_params);
         $this->initializeValues();
     }
 
@@ -142,8 +159,14 @@ abstract class Base extends BaseDataType
         foreach ($this->header_params as $name => $infos) {
             $xml_writer->writeElement($name, $this->$name);
         }
-        $xml_writer->endElement(); // End of Request
         $xml_writer->endElement(); // End of ServiceHeader
+
+        $xml_writer->startElement('MetaData');
+        foreach ($this->header_params as $name => $infos) {
+            $xml_writer->writeElement($name, $this->$name);
+        }
+        $xml_writer->endElement(); // End of MetaData
+        $xml_writer->endElement(); // End of Request
 
         foreach ($this->body_params as $name => $infos) {
             if ($this->$name) {
