@@ -50,7 +50,7 @@ class Requestor extends Base
             'type' => 'string',
             'required' => true,
             'subobject' => false,
-            'comment' => 'Company Name',
+            'comment' => 'City',
         ],
         'CountryCode' => [
             'type' => 'string',
@@ -58,5 +58,12 @@ class Requestor extends Base
             'subobject' => false,
             'comment' => 'Country Code',
         ],
+        'AddressLine' => [
+            'type' => 'string',
+            'required' => true,
+            'subobject' => false,
+            'comment' => 'Address Line',
+            'multivalues' => true,
+        ], 
     ];
 }
