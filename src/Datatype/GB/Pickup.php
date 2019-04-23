@@ -23,6 +23,14 @@ class Pickup extends Base
             'comment'   => 'Date Y-m-d',
             'maxLength' => '10',
         ],
+        'PickupTypeCode' => [
+            'type' => 'PickupTypeCode',
+            'required' => true,
+            'subobject' => false,
+            'comment' => 'Not sure',
+            'length' => '1',
+            'enumeration' => 'S',
+        ],
         'ReadyByTime' => [
             'type'      => 'string',
             'required'  => true,
@@ -37,13 +45,5 @@ class Pickup extends Base
             'comment'   => 'Time HH:MM',
             'subobject' => false,
         ],
-        'PickupTypeCode' => [
-            'type' => 'PickupTypeCode',
-            'required' => true,
-            'subobject' => false,
-            'comment' => 'Not sure',
-            'length' => '1',
-            'enumeration' => 'S',
-        ], 
     ];
 }
