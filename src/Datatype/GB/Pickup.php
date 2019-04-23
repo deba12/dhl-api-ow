@@ -37,5 +37,13 @@ class Pickup extends Base
             'comment'   => 'Time HH:MM',
             'subobject' => false,
         ],
+        'PickupTypeCode' => [
+            'type' => 'PickupTypeCode',
+            'required' => true,
+            'subobject' => false,
+            'comment' => 'Not sure',
+            'length' => '1',
+            'enumeration' => 'S',
+        ], 
     ];
 }
