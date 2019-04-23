@@ -46,5 +46,17 @@ class Requestor extends Base
             'subobject' => false,
             'comment' => 'Company Name',
         ],
+        'City' => [
+            'type' => 'string',
+            'required' => true,
+            'subobject' => false,
+            'comment' => 'Company Name',
+        ],
+        'CountryCode' => [
+            'type' => 'string',
+            'required' => true,
+            'subobject' => false,
+            'comment' => 'Country Code',
+        ],
     ];
 }
