@@ -36,6 +36,12 @@ class BookPURequest extends Base
     protected $display_schema_version = true;
 
     /**
+     * @var string
+     * The schema version
+     */
+    protected $schema_version = '3.0';
+
+    /**
      * Parameters to be send in the body
      * @var array
      */
