@@ -139,7 +139,7 @@ abstract class Base extends BaseDataType
         $xml_writer = new \XMLWriter();
         $xml_writer->openMemory();
         $xml_writer->setIndent(true);
-        $xml_writer->startDocument('1.0', 'UTF-8');
+        $xml_writer->startDocument('1.0', 'ISO-8859');
 
         $xml_writer->startElement('req:' . $this->service_name);
         $xml_writer->writeAttribute('xmlns:req', self::DHL_REQ);
