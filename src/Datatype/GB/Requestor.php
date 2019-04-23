@@ -46,6 +46,11 @@ class Requestor extends Base
             'subobject' => false,
             'comment' => 'Company Name',
         ],
+        'Address1' => [
+            'type' => 'string',
+            'required' => false,
+            'subobject' => false,
+        ],
         'City' => [
             'type' => 'string',
             'required' => true,
@@ -57,11 +62,6 @@ class Requestor extends Base
             'required' => true,
             'subobject' => false,
             'comment' => 'Country Code',
-        ],
-        'Address1' => [
-            'type' => 'string',
-            'required' => false,
-            'subobject' => false,
         ],
     ];
 }
