@@ -45,8 +45,7 @@ abstract class Base extends BaseDataType
         'Password' => [
             'type' => 'string',
             'required' => true,
-        ],
-        ''
+        ]
     ];
 
     /**
@@ -61,8 +60,7 @@ abstract class Base extends BaseDataType
         'SoftwareVersion' => [
             'type' => 'string',
             'required' => true,
-        ],
-        ''
+        ]
     ];
 
     /**
