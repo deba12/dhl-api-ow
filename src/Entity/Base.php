@@ -162,7 +162,7 @@ abstract class Base extends BaseDataType
         $xml_writer->endElement(); // End of ServiceHeader
 
         $xml_writer->startElement('MetaData');
-        foreach ($this->header_params as $name => $infos) {
+        foreach ($this->meta_params as $name => $infos) {
             $xml_writer->writeElement($name, $this->$name);
         }
         $xml_writer->endElement(); // End of MetaData
