@@ -63,5 +63,11 @@ class Requestor extends Base
             'subobject' => false,
             'comment' => 'Country Code',
         ],
+        'PostalCode' => [
+            'type' => 'string',
+            'required' => true,
+            'subobject' => false,
+            'comment' => 'Postal Code',
+        ],
     ];
 }
