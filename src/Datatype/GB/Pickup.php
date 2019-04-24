@@ -45,5 +45,10 @@ class Pickup extends Base
             'comment'   => 'Time HH:MM',
             'subobject' => false,
         ],
+        'Pieces' => [
+            'type' => 'integer',
+            'required' => false,
+            'subobject' => false,
+        ],
     ];
 }

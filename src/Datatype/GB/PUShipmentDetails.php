@@ -93,6 +93,15 @@ class PUShipmentDetails extends Base
             'minLength' => '1',
             'maxLength' => '4',
         ],
+        'LocalProductCode' => [
+            'type' => 'LocalProductCode',
+            'required' => false,
+            'subobject' => false,
+            'comment' => '',
+            'pattern' => '([A-Z0-9])*',
+            'minLength' => '1',
+            'maxLength' => '4',
+        ],
         'DoorTo' => [
             'type' => 'DoorTo',
             'required' => false,

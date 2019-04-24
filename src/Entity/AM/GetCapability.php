@@ -30,6 +30,12 @@ class GetCapability extends Base
     protected $xml_model_name = 'GetCapability';
 
     /**
+     * @var string
+     * The schema version
+     */
+    protected $schema_version = '2.0';
+
+    /**
      * Parameters to be send in the body
      * @var array
      */
