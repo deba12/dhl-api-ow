@@ -29,7 +29,7 @@ class Pickup extends Base
             'subobject' => false,
             'comment' => 'Not sure',
             'length' => '1',
-            'enumeration' => 'S',
+            'enumeration' => 'S,A',
         ],
         'ReadyByTime' => [
             'type'      => 'string',
