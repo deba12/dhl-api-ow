@@ -139,5 +139,13 @@ class PUShipmentDetails extends Base
             'required' => false,
             'subobject' => true,
         ],
+        'IsDutiable' => [
+            'type' => 'YesNo',
+            'required' => false,
+            'subobject' => false,
+            'comment' => 'Boolean flag',
+            'length' => '1',
+            'enumeration' => 'Y,N',
+        ],
     ];
 }
