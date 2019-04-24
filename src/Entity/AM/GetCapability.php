@@ -35,6 +35,12 @@ class GetCapability extends Base
      */
     protected $schema_version = '2.0';
 
+        /**
+     * Display the schema version
+     * @var boolean
+     */
+    protected $display_schema_version = true;
+
     /**
      * Parameters to be send in the body
      * @var array
