@@ -125,7 +125,8 @@ abstract class Base extends BaseDataType
      */
     public function __construct()
     {
-        $this->params = array_merge($this->header_params, $this->body_params, $this->meta_params);
+        $this->params = $this->dont_use_meta_data ? array_merge($this->header_params, $this->body_params) : array_merge($this->header_params, $this->body_params, $this->meta_params);
+
         $this->initializeValues();
     }
 
