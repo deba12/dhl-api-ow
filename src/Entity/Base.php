@@ -103,6 +103,12 @@ abstract class Base extends BaseDataType
     protected $display_schema_version = false;
 
     /**
+     * @var string
+     * Use Meta Data?
+     */
+    protected $dont_use_meta_data = false;
+
+    /**
      * Parent node name of the object
      * @var string
      */
@@ -158,12 +164,13 @@ abstract class Base extends BaseDataType
             $xml_writer->writeElement($name, $this->$name);
         }
         $xml_writer->endElement(); // End of ServiceHeader
-
-        $xml_writer->startElement('MetaData');
-        foreach ($this->meta_params as $name => $infos) {
-            $xml_writer->writeElement($name, $this->$name);
+        if(!$this->dont_use_meta_data) {
+            $xml_writer->startElement('MetaData');
+            foreach ($this->meta_params as $name => $infos) {
+                $xml_writer->writeElement($name, $this->$name);
+            }
+            $xml_writer->endElement(); // End of MetaData
         }
-        $xml_writer->endElement(); // End of MetaData
         $xml_writer->endElement(); // End of Request
 
         foreach ($this->body_params as $name => $infos) {
