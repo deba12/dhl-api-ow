@@ -22,7 +22,7 @@ class ServiceHeader extends Base
     protected $params = [
         'SoftwareName' => [
             'type' => 'SoftwareName',
-            'required' => true,
+            'required' => false,
             'subobject' => false,
             'comment' => 'Name of software using this package (whatever you want)',
             'minLength' => '1',
@@ -30,7 +30,7 @@ class ServiceHeader extends Base
         ],
         'SoftwareVersion' => [
             'type' => 'SoftwareVersion',
-            'required' => true,
+            'required' => false,
             'subobject' => false,
             'comment' => 'Version of software using this package',
             'minLength' => '1',
