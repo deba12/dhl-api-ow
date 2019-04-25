@@ -30,6 +30,12 @@ class KnownTrackingRequest extends Base
     protected $service_xsd = 'KnownTrackingRequest.xsd';
 
     /**
+     * @var string
+     * Use Meta Data?
+     */
+    protected $dont_use_meta_data = true;
+
+    /**
      * Parameters to be send in the body
      * @var array
      */

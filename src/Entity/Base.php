@@ -45,7 +45,22 @@ abstract class Base extends BaseDataType
         'Password' => [
             'type' => 'string',
             'required' => true,
+        ]
+    ];
+
+    /**
+     * Parameters to be used in meta tag in header
+     * @var array
+     */
+    protected $meta_params = [
+        'SoftwareName' => [
+            'type' => 'string',
+            'required' => true,
         ],
+        'SoftwareVersion' => [
+            'type' => 'string',
+            'required' => true,
+        ]
     ];
 
     /**
@@ -79,13 +94,19 @@ abstract class Base extends BaseDataType
      * @var string
      * The schema version
      */
-    protected $schema_version = '6.2';
+    protected $schema_version = '1.0';
 
     /**
      * @var boolean
      * Render the schema version or not
      */
     protected $display_schema_version = false;
+
+    /**
+     * @var string
+     * Use Meta Data?
+     */
+    protected $dont_use_meta_data = false;
 
     /**
      * Parent node name of the object
@@ -104,7 +125,7 @@ abstract class Base extends BaseDataType
      */
     public function __construct()
     {
-        $this->params = array_merge($this->header_params, $this->body_params);
+        $this->params = array_merge($this->header_params, $this->body_params, $this->meta_params);
         $this->initializeValues();
     }
 
@@ -142,8 +163,15 @@ abstract class Base extends BaseDataType
         foreach ($this->header_params as $name => $infos) {
             $xml_writer->writeElement($name, $this->$name);
         }
-        $xml_writer->endElement(); // End of Request
         $xml_writer->endElement(); // End of ServiceHeader
+        if(!$this->dont_use_meta_data) {
+            $xml_writer->startElement('MetaData');
+            foreach ($this->meta_params as $name => $infos) {
+                $xml_writer->writeElement($name, $this->$name);
+            }
+            $xml_writer->endElement(); // End of MetaData
+        }
+        $xml_writer->endElement(); // End of Request
 
         foreach ($this->body_params as $name => $infos) {
             if ($this->$name) {
