@@ -35,9 +35,9 @@ class BookPickupRequest extends Base
      */
     protected $body_params = [
         'Requestor' => [
-            'type' => 'string',
+            'type' => 'Requestor',
             'required' => false,
-            'subobject' => false,
+            'subobject' => true,
         ],
         'Place' => [
             'type' => 'Place',

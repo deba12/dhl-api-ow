@@ -5,9 +5,9 @@ namespace Mtc\Dhl\Datatype\AM;
 use Mtc\Dhl\Datatype\Base;
 
 /**
- * ServiceHeader Request model for DHL API
+ * MetaData Request model for DHL API
  */
-class ServiceHeader extends Base
+class MetaData extends Base
 {
     /**
      * Is this object a subobject
@@ -21,16 +21,16 @@ class ServiceHeader extends Base
      */
     protected $params = [
         'SoftwareName' => [
-            'type' => 'SoftwareName',
-            'required' => false,
+            'type' => 'string',
+            'required' => true,
             'subobject' => false,
             'comment' => 'Name of software using this package (whatever you want)',
             'minLength' => '1',
             'maxLength' => '32',
         ],
         'SoftwareVersion' => [
-            'type' => 'SoftwareVersion',
-            'required' => false,
+            'type' => 'string',
+            'required' => true,
             'subobject' => false,
             'comment' => 'Version of software using this package',
             'minLength' => '1',

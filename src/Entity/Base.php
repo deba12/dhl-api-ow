@@ -311,6 +311,7 @@ abstract class Base extends BaseDataType
     {
         foreach ($this->params as $name => $infos) {
             if (isset($infos['required']) && true === $infos['required'] && $this->values[$name] === null) {
+
                 throw new InvalidArgumentException('Field ' . $name . ' has no value');
             }
 

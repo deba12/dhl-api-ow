@@ -146,5 +146,24 @@ class ShipmentDetails extends \Mtc\Dhl\Datatype\AM\ShipmentDetails
             'minLength' => '1',
             'maxLength' => '100',
         ],
+	    'AccountType' => [
+		    'type' => 'string',
+		    'required' => false,
+		    'subobject' => false,
+		    'comment' => 'Valid values are D. D =DHL',
+		    'length' => '1',
+	    ],
+	    'AccountNumber' => [
+		    'type' => 'string',
+		    'required' => false,
+		    'subobject' => false,
+		    'comment' => 'DHL Account Number of the consignee'
+	    ],
+	    'BillToAccountNumber' => [
+		    'type' => 'string',
+		    'required' => false,
+		    'subobject' => false,
+		    'comment' => 'Billing account number of the consignee.'
+	    ],
     ];
 }
