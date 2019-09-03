@@ -35,6 +35,8 @@ class RouteRequest extends Base
      */
     protected $display_schema_version = true;
 
+	protected $dont_use_meta_data = true;
+
     /**
      * Parameters to be send in the body
      * @var array

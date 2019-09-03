@@ -58,6 +58,7 @@ class Web
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
         curl_setopt($ch, CURLOPT_PORT, 443);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $request->toXML());
+
         $result = curl_exec($ch);
 
         if (curl_error($ch)) {

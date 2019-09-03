@@ -23,6 +23,12 @@ class GetQuote extends Base
      */
     protected $service_xsd = 'DCT-req.xsd';
 
+	/**
+	 * @var string
+	 * Use Meta Data?
+	 */
+	protected $dont_use_meta_data = true;
+
     /**
      * Parent node name of the object
      * @var string

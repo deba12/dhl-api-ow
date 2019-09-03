@@ -22,7 +22,7 @@ class MetaData extends Base
     protected $params = [
         'SoftwareName' => [
             'type' => 'string',
-            'required' => true,
+            'required' => false,
             'subobject' => false,
             'comment' => 'Name of software using this package (whatever you want)',
             'minLength' => '1',
@@ -30,7 +30,7 @@ class MetaData extends Base
         ],
         'SoftwareVersion' => [
             'type' => 'string',
-            'required' => true,
+            'required' => false,
             'subobject' => false,
             'comment' => 'Version of software using this package',
             'minLength' => '1',

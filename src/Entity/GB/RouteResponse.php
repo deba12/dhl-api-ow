@@ -29,6 +29,8 @@ class RouteResponse extends Base
      */
     protected $service_xsd = 'RouteResponse.xsd';
 
+	protected $dont_use_meta_data = true;
+
     /**
      * Parameters to be send in the body
      * @var array
@@ -63,5 +65,10 @@ class RouteResponse extends Base
             'required' => false,
             'subobject' => true,
         ],
+	    'Note' => [
+	    	'type' => 'Note',
+		    'required' => true,
+		    'subobject' => true
+	    ]
     ];
 }

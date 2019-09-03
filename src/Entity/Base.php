@@ -55,11 +55,11 @@ abstract class Base extends BaseDataType
     protected $meta_params = [
         'SoftwareName' => [
             'type' => 'string',
-            'required' => true,
+            'required' => false,
         ],
         'SoftwareVersion' => [
             'type' => 'string',
-            'required' => true,
+            'required' => false,
         ]
     ];
 
@@ -225,7 +225,7 @@ abstract class Base extends BaseDataType
     {
         $xml = simplexml_load_string(str_replace('req:', '', $xml));
 
-        if ((string)$xml->Response->Status->Condition->ConditionCode != '') {
+        if ($xml->Response->Status &&  (string)$xml->Response->Status->Condition->ConditionCode != '') {
             $errorMsg = ((string)$xml->Response->Status->Condition->ConditionCode) . ' : ' . ((string)$xml->Response->Status->Condition->ConditionData);
             throw new \Exception('Error returned from DHL webservice : ' . $errorMsg);
         }
@@ -311,7 +311,6 @@ abstract class Base extends BaseDataType
     {
         foreach ($this->params as $name => $infos) {
             if (isset($infos['required']) && true === $infos['required'] && $this->values[$name] === null) {
-
                 throw new InvalidArgumentException('Field ' . $name . ' has no value');
             }
 
