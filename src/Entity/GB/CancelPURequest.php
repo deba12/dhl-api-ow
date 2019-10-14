@@ -34,7 +34,9 @@ class CancelPURequest extends Base
      * @var boolean
      */
     protected $display_schema_version = true;
-	protected $dont_use_meta_data = true;
+	protected $dont_use_meta_data = false;
+
+	protected $schema_version = '3.0';
     
     /**
      * Parameters to be send in the body
@@ -54,8 +56,6 @@ class CancelPURequest extends Base
             'type' => 'string',
             'required' => false,
             'subobject' => false,
-            'minInclusive' => '1',
-            'maxInclusive' => '999999999',
         ],
         'RequestorName' => [
             'type' => 'string',
