@@ -50,5 +50,11 @@ class Pickup extends Base
             'required' => false,
             'subobject' => false,
         ],
+        'weight' => [
+            'type' => 'weight',
+            'required' => false,
+            'subobject' => true,
+        ],
+
     ];
 }
